@@ -16,23 +16,36 @@
 
 ## Installation
 
-1. **Install Python 3.10 or 3.11** (earlier or pre‑release versions such as 3.13 may not have compiled wheels for pandas).  You can download installers from [python.org](https://www.python.org/downloads/windows/).
+1. **Install Python 3.10 or 3.11** (earlier or pre‑release versions such as 3.13 may not have compiled wheels for pandas).  On Windows you can download installers from [python.org](https://www.python.org/downloads/windows/); on macOS you can install Python via Homebrew with `brew install python@3.11`, and on Linux you can use your distribution’s package manager (for example `sudo apt install python3.11` on Ubuntu) or download installers from [python.org](https://www.python.org/downloads/).
 2. **Clone this repository** or download the files to a folder.
-3. **Create and activate a virtual environment (optional but recommended):**
+3. **Set up a virtual environment and install dependencies:**
+
+   **On Windows**:
 
    ```bash
+   # create a virtual environment
    python -m venv pcap-env
-   pcap-env\Scripts\activate   # on Windows
-   # or source pcap-env/bin/activate on Linux/macOS
-   ```
+   # activate it
+   pcap-env\Scripts\activate
 
-4. **Install dependencies:**
-
-   ```bash
+   # install the required packages
    pip install streamlit scapy pandas scikit-learn
    ```
 
-5. **Run the app:**
+   **On macOS or Linux**:
+
+   ```bash
+   # ensure you have Python 3.10 or 3.11 installed (use your package manager or Homebrew)
+   # create a virtual environment
+   python3 -m venv pcap-env
+   # activate it
+   source pcap-env/bin/activate
+
+   # install the required packages
+   pip install streamlit scapy pandas scikit-learn
+   ```
+
+4. **Run the app:**
 
    ```bash
    streamlit run pcap_ai_analyzer.py
