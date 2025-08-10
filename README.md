@@ -3,7 +3,7 @@
 
 # PCAP AI Analyzer
 
-**PCAP AI Analyzer** is a web‑based and Windows‑compatible tool that uses Python and Streamlit to make network packet‑capture analysis accessible to anyone.  Upload a `.pcap` file and the app automatically parses packets, calculates protocol distribution, identifies the biggest bandwidth consumers, flags port scans and runs an unsupervised anomaly detector using scikit‑learn.  The project was inspired by established network‑monitoring tools such as Suricata, Snort and Zeek【817699540028695†L50-L55】【414316282772405†L302-L344】, but it aims to provide a lightweight, user‑friendly alternative for quick inspections.
+**PCAP AI Analyzer** is a web‑based and Windows‑compatible tool that uses Python and Streamlit to make network packet‑capture analysis accessible to anyone.  Upload a `.pcap` file and the app automatically parses packets, calculates protocol distribution, identifies the biggest bandwidth consumers, flags port scans and runs an unsupervised anomaly detector using scikit‑learn.  The project was inspired by established network‑monitoring tools such as Suricata, Snort and Zeek, but it aims to provide a lightweight, user‑friendly alternative for quick inspections.
 
 ## Features
 
@@ -12,7 +12,7 @@
 - **Port scan detection:** Flags source IPs that contact an unusually large number of destination ports in a short time window.
 - **Anomaly detection:** Uses an Isolation Forest to score packets based on features such as packet length, protocol number and inter‑arrival time.  Points with a high anomaly score may indicate unusual behaviour.
 - **Streamlit interface:** Runs locally on Windows or in the browser.  Drag‑and‑drop PCAP upload with interactive tables and charts.
-- **Extensible design:** You can integrate signature‑based engines like Suricata or Snort for deeper intrusion detection or feed Zeek logs into the data pipeline【745234784077833†L88-L103】.
+ - **Extensible design:** You can integrate signature‑based engines like Suricata or Snort for deeper intrusion detection or feed Zeek logs into the data pipeline.
 
 ## Installation
 
@@ -56,11 +56,11 @@ Many third‑party packages (notably pandas) publish binary wheels for stable Py
 
 ### Can I integrate Suricata or Snort into this app?
 
-Yes.  The current version uses a simple heuristic for port‑scan detection.  For more comprehensive intrusion detection, you can set up Suricata or Snort on the same machine or in a separate container and feed their alert logs into the app.  Suricata is an open‑source engine capable of real‑time intrusion detection, inline intrusion prevention and offline PCAP processing【817699540028695†L50-L55】, while Snort combines signature, protocol and anomaly‑based inspection to detect malicious behaviour【414316282772405†L302-L344】.
+Yes.  The current version uses a simple heuristic for port‑scan detection.  For more comprehensive intrusion detection, you can set up Suricata or Snort on the same machine or in a separate container and feed their alert logs into the app.  Suricata is an open‑source engine capable of real‑time intrusion detection, inline intrusion prevention and offline PCAP processing, while Snort combines signature, protocol and anomaly‑based inspection to detect malicious behaviour.
 
 ### Does the app handle large PCAP files?
 
-The app loads the entire PCAP into memory and is best suited for small‑to‑medium captures (tens of megabytes).  For multi‑gigabyte captures, consider pre‑processing the data with tools like Zeek or using a full‑featured platform such as Malcolm【147587170629601†L27-L63】.
+The app loads the entire PCAP into memory and is best suited for small‑to‑medium captures (tens of megabytes).  For multi‑gigabyte captures, consider pre‑processing the data with tools like Zeek or using a full‑featured platform such as Malcolm.
 
 ## Troubleshooting
 
